@@ -103,16 +103,15 @@ Se creo una carpeta independiente y un historial nuevo saneado, sin arrastrar
 commits con credenciales del profesor ni del proyecto anterior.
 Origin: https://github.com/Jomiancto/Unidad2.git. Rama: main.
 Se creo el commit local tras revisar archivos preparados, sintaxis, exclusiones y secretos.
-El push fallo con codigo 128: Git no tiene credenciales disponibles y la ejecucion
-sin interaccion no puede solicitar inicio de sesion. La conexion GitHub del plugin
-confirma permisos de lectura y push=false. Por tanto, Unidad2 remoto sigue vacio:
-el respaldo Git local esta preparado, pero aun no existe respaldo remoto.
+El primer push fallo con codigo 128 por falta de credenciales disponibles.
+Posteriormente el usuario completo el inicio de sesion oficial con Git Credential
+Manager desde Cmder y el push termino con codigo 0. La rama main tiene seguimiento
+de origin/main. La conexion del plugin tiene permisos de lectura, pero Git local
+utiliza ahora la autenticacion autorizada del usuario.
 No se intento publicar al profesor y no se utilizo force push.
 
-Para completar el respaldo, el usuario debe abrir Cmder, entrar a E:\cmder\Unidad2
-y ejecutar git push -u origin main, completando el inicio de sesion oficial si se solicita.
-No escribir tokens ni contrasenas en comandos o archivos. La autenticacion interactiva
-requiere participacion del usuario; no es un fallo de Django o MariaDB.
+Para publicar nuevos cambios confirmados, desde Cmder en E:\cmder\Unidad2 se utiliza
+git push -u origin main. No escribir tokens ni contrasenas en comandos o archivos.
 
 ## Archivos y pendientes
 
@@ -131,6 +130,9 @@ ORIGEN_PROFESOR.json, AGENTS.md, INICIAR_BACKEND.cmd y tools/ de diagnostico.
 Locales ignorados: .env, .venv, .local (respaldos/logs), scripts y tareas de fases.
 
 Faltan CRUD/API REST, serializers, routers, vistas de negocio, plantillas propias,
-registro de modelos en admin, tests de negocio y superusuario. No se agregaron
+registro de modelos en admin y tests de negocio. No se agregaron
 funcionalidades distintas del punto de partida del profesor.
-El administrador tiene la pagina de login, pero no se crearon credenciales ni usuarios.
+Actualizacion: se creo localmente el superusuario admin solicitado por el usuario.
+Se comprobaron autenticacion, permisos y login HTTP real a /admin/ con respuesta 200.
+La cuenta y su hash de contrasena se conservan solo en MariaDB. El script privado
+de creacion se elimino tras ejecutarlo y nunca se versiono ni publico.

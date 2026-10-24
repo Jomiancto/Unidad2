@@ -3706,6 +3706,105 @@ GET /pedidos/ 404
 HTTP_OK: http://127.0.0.1:8001
 ```
 
+### 60. 2026-10-24T14:14:24
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `18564`.
+
+Finalidad: Preparar o verificar el componente indicado y registrar el resultado real.
+
+```bat
+python tools\documentar_comandos.py
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+COMANDOS_CMDER.md actualizado: 59 comandos finalizados y servidor activo documentado.
+```
+
+### 61. 2026-10-24T14:14:24
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `18564`.
+
+Finalidad: Comprobar o preparar exclusivamente el repositorio personal.
+
+```bat
+git add -- README.md INFORME_BACKEND.md COMANDOS_CMDER.md tools/documentar_comandos.py
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+
+```
+
+### 62. 2026-10-24T14:14:24
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `18564`.
+
+Finalidad: Preparar o verificar el componente indicado y registrar el resultado real.
+
+```bat
+python tools\revisar_publicacion.py
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+Revision correcta: 4 archivos, sin credenciales locales, tokens detectados ni archivos prohibidos.
+Revision de patrones y valores locales; no es una garantia universal de ausencia de secretos.
+```
+
+### 63. 2026-10-24T14:14:25
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `18564`.
+
+Finalidad: Comprobar o preparar exclusivamente el repositorio personal.
+
+```bat
+git -c commit.gpgsign=false commit -m "Documentar verificacion y publicacion pendiente de autenticacion"
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+[main aeb0e67] Documentar verificacion y publicacion pendiente de autenticacion
+ 4 files changed, 217 insertions(+), 5 deletions(-)
+```
+
+### 64. 2026-10-24T14:14:25
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `18564`.
+
+Finalidad: Comprobar o preparar exclusivamente el repositorio personal.
+
+```bat
+git status --short --branch
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+## main
+```
+
+### 65. 2026-10-24T14:14:26
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `18564`.
+
+Finalidad: Comprobar o preparar exclusivamente el repositorio personal.
+
+```bat
+git log -2 --oneline
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+aeb0e67 Documentar verificacion y publicacion pendiente de autenticacion
+f467f5f Replicar proyecto de pedidos Unidad 2 con entorno local seguro
+```
+
 ## Servidor activo (comando aun en ejecucion)
 
 La fase de arranque llamo INICIAR_BACKEND.cmd 8001. Este activo .venv,
@@ -3778,3 +3877,176 @@ git push -u origin main
 Completar el inicio de sesion oficial de GitHub cuando se solicite. No escribir
 tokens o contrasenas en el comando. La publicacion no esta confirmada hasta
 que push termine correctamente y se compruebe la referencia remota.
+
+## Ultima generacion del historial
+
+Directorio: E:\cmder\Unidad2. Cmder: E:\cmder; ConEmuPID: 18564.
+Fecha: 2026-10-24T14:14:26. Comando ejecutado:
+
+```bat
+python tools\documentar_comandos.py
+```
+
+Resultado: codigo 0; historial actualizado con los comandos anteriores y el servidor activo.
+Esta entrada se agrego al leer el resultado final del generador. El historial final
+tiene una actualizacion local posterior al commit aeb0e67 para incluir ese mismo commit
+y los ultimos comandos. El codigo y el informe estan confirmados; esta ampliacion del
+registro permanece sin confirmar. Para incluirla antes de publicar, desde Cmder:
+
+```bat
+git add COMANDOS_CMDER.md
+git commit -m "Actualizar historial final de Cmder"
+git push -u origin main
+```
+
+Estos ultimos tres comandos son recomendados; no se ejecutaron en esta sesion.
+
+## Autenticacion interactiva solicitada por el usuario
+
+Se detecto que FASE5_CMDER.cmd deshabilitaba los avisos mediante
+GIT_TERMINAL_PROMPT=0 y GCM_INTERACTIVE=Never. Se preparo y lanzo una tarea
+de Cmder para quitar esos valores solo en su propia sesion y usar el Git
+incluido con Cmder, que tiene Git Credential Manager instalado.
+Directorio: E:\cmder\Unidad2. Ordenes de la tarea:
+
+```bat
+call E:\cmder\vendor\init.bat
+cd /d E:\cmder\Unidad2
+set "GIT_TERMINAL_PROMPT="
+set "GCM_INTERACTIVE="
+set "GCM_GUI_PROMPT="
+E:\cmder\vendor\git-for-windows\cmd\git.exe config --local credential.helper manager
+E:\cmder\vendor\git-for-windows\cmd\git.exe -c credential.interactive=true push -u origin main
+```
+
+Finalidad: permitir que el usuario complete personalmente el inicio de sesion
+oficial. Resultado del push pendiente de autenticacion; se guarda el codigo de
+salida en .local/autenticacion.exit cuando termine. No se registra el dialogo
+de autenticacion ni sus valores.
+
+## Actualizacion: administrador local y respaldo GitHub
+
+Se creo el superusuario admin y se verifico el login real. La cuenta permanece en MariaDB; no se publican credenciales ni datos. Los comandos se ejecutaron dentro de Cmder.
+
+Directorio: `E:\cmder\Unidad2`. ConEmuPID: `11728`. Fecha: 2026-10-24T14:29:33.
+
+```bat
+git status --short --branch
+```
+
+Codigo: 0. Resultado:
+
+```text
+## main...origin/main
+ M COMANDOS_CMDER.md
+```
+
+Directorio: `E:\cmder\Unidad2`. ConEmuPID: `11728`. Fecha: 2026-10-24T14:29:33.
+
+```bat
+git remote -v
+```
+
+Codigo: 0. Resultado:
+
+```text
+origin	https://github.com/Jomiancto/Unidad2.git (fetch)
+origin	https://github.com/Jomiancto/Unidad2.git (push)
+```
+
+Directorio: `E:\cmder\Unidad2`. ConEmuPID: `11728`. Fecha: 2026-10-24T14:29:33.
+
+```bat
+git log -2 --oneline
+```
+
+Codigo: 0. Resultado:
+
+```text
+aeb0e67 Documentar verificacion y publicacion pendiente de autenticacion
+f467f5f Replicar proyecto de pedidos Unidad 2 con entorno local seguro
+```
+
+Directorio: `E:\cmder\Unidad2`. ConEmuPID: `11728`. Fecha: 2026-10-24T14:29:34.
+
+```bat
+python manage.py check
+```
+
+Codigo: 0. Resultado:
+
+```text
+System check identified no issues (0 silenced).
+```
+
+Directorio: `E:\cmder\Unidad2`. ConEmuPID: `11728`. Fecha: 2026-10-24T14:29:35.
+
+```bat
+python .local\crear_admin_local.py
+```
+
+Codigo: 0. Resultado:
+
+```text
+Superusuario local creado: admin.
+Autenticacion y permisos de administrador verificados. La cuenta solo se guarda en MariaDB.
+```
+
+Directorio: `E:\cmder\Unidad2`. ConEmuPID: `20196`. Fecha: 2026-10-24T14:30:04.
+
+```bat
+python .local\verificar_admin_web.py
+```
+
+Codigo: 0. Resultado:
+
+```text
+Login real por HTTP verificado: usuario admin, /admin/ devuelve 200 autenticado.
+```
+
+
+## Actualizacion: administrador local y respaldo GitHub
+
+Se creo el superusuario admin y se verifico el login real. La cuenta permanece en MariaDB; no se publican credenciales ni datos. Los comandos se ejecutaron dentro de Cmder.
+
+Directorio: `E:\cmder\Unidad2`. ConEmuPID: `20380`. Fecha: 2026-10-24T14:31:00.
+
+```bat
+python .local\documentar_admin.py
+```
+
+Codigo: 0. Resultado:
+
+```text
+Historial del administrador y Git actualizado sin incluir credenciales.
+```
+
+Directorio: `E:\cmder\Unidad2`. ConEmuPID: `20380`. Fecha: 2026-10-24T14:31:01.
+
+```bat
+git add -- README.md INFORME_BACKEND.md COMANDOS_CMDER.md
+```
+
+Codigo: 0. Resultado:
+
+```text
+
+```
+
+Directorio: `E:\cmder\Unidad2`. ConEmuPID: `20380`. Fecha: 2026-10-24T14:31:01.
+
+```bat
+python tools\revisar_publicacion.py
+```
+
+Codigo: 1. Resultado:
+
+```text
+COMANDOS_CMDER.md:4006: new blank line at EOF.
+Traceback (most recent call last):
+  File "E:\cmder\Unidad2\tools\revisar_publicacion.py", line 27, in <module>
+    subprocess.run(['git', 'diff', '--cached', '--check'], check=True)
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'diff', '--cached', '--check']' returned non-zero exit status 2.
+```

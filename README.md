@@ -80,7 +80,9 @@ La preparacion inicial en otro equipo debe revisar las rutas reales de MariaDB;
 Solo existe `/admin/` y sus subrutas. `/` muestra la bienvenida de Django en DEBUG,
 sin vista de negocio. No hay API CRUD, serializers, routers, plantillas propias,
 modelos registrados en admin ni pruebas implementadas en `pedidos_app/tests.py`.
-No se creo superusuario. Estos elementos corresponden al avance pendiente de clases.
+Se creo el superusuario `admin` localmente a peticion del usuario. Sus credenciales
+se guardan solo en MariaDB y no se publican. Los elementos anteriores corresponden
+al avance pendiente de clases.
 
 ## Verificar
 
@@ -104,9 +106,9 @@ Consultar `COMANDOS_CMDER.md` e `INFORME_BACKEND.md` para resultados reales.
 
 ## Estado del respaldo GitHub
 
-El codigo esta confirmado localmente y origin apunta al repositorio personal.
-El primer push se detuvo por falta de autenticacion; el remoto aun no contiene la copia.
-Para terminar el respaldo, desde Cmder y tras iniciar sesion en GitHub si se solicita:
+Origin apunta al repositorio personal. El primer intento fallo por falta de autenticacion;
+el inicio de sesion posterior se completo y ese push termino correctamente.
+Para publicar futuros cambios confirmados, desde Cmder:
 
 ```bat
 cd /d E:\cmder\Unidad2
