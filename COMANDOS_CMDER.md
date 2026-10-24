@@ -33,7 +33,9 @@ type CMDER_ACCESO.log
 
 Resultado: CMDER_ROOT=E:\cmder, ConEmuPID=13616, ACCESO_CMDER_CORRECTO.
 El lanzador de tareas se uso luego con /START E:\cmder\Unidad2 y archivos
-FASE1_CMDER.task, FASE2_CMDER.task, FASE3_CMDER.task y FASE4_CMDER.task, en ese orden.
+FASE1_CMDER.task, FASE2_CMDER.task, FASE3_CMDER.task, FASE4_CMDER.task,
+FASE5_CMDER.task (tres intentos: revision inicial, normalizacion y push) y
+FASE6_CMDER.task, en ese orden.
 Las tareas contienen cmd.exe /d /k y el archivo .cmd correspondiente.
 Los scripts usan call E:\cmder\vendor\init.bat, cd /d E:\cmder\Unidad2 y
 call .venv\Scripts\activate.bat. Los controles if errorlevel interrumpen ante fallos.
@@ -3547,6 +3549,163 @@ Codigo de salida: **0**. Resultado:
 
 ```
 
+### 53. 2026-10-24T14:12:57
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `4520`.
+
+Finalidad: Preparar o verificar el componente indicado y registrar el resultado real.
+
+```bat
+python tools\documentar_comandos.py
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+COMANDOS_CMDER.md actualizado: 52 comandos finalizados y servidor activo documentado.
+```
+
+### 54. 2026-10-24T14:12:58
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `4520`.
+
+Finalidad: Comprobar o preparar exclusivamente el repositorio personal.
+
+```bat
+git add -- .
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+
+```
+
+### 55. 2026-10-24T14:12:58
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `4520`.
+
+Finalidad: Preparar o verificar el componente indicado y registrar el resultado real.
+
+```bat
+python tools\revisar_publicacion.py
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+Revision correcta: 37 archivos, sin credenciales locales, tokens detectados ni archivos prohibidos.
+Revision de patrones y valores locales; no es una garantia universal de ausencia de secretos.
+```
+
+### 56. 2026-10-24T14:13:01
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `4520`.
+
+Finalidad: Comprobar o preparar exclusivamente el repositorio personal.
+
+```bat
+git -c commit.gpgsign=false commit -m "Replicar proyecto de pedidos Unidad 2 con entorno local seguro"
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+[main (root-commit) f467f5f] Replicar proyecto de pedidos Unidad 2 con entorno local seguro
+ 37 files changed, 4907 insertions(+)
+ create mode 100644 .env.example
+ create mode 100644 .gitattributes
+ create mode 100644 .gitignore
+ create mode 100644 AGENTS.md
+ create mode 100644 COMANDOS_CMDER.md
+ create mode 100644 INFORME_BACKEND.md
+ create mode 100644 INICIAR_BACKEND.cmd
+ create mode 100644 ORIGEN_PROFESOR.json
+ create mode 100644 README.md
+ create mode 100644 manage.py
+ create mode 100644 pedidos_app/__init__.py
+ create mode 100644 pedidos_app/admin.py
+ create mode 100644 pedidos_app/apps.py
+ create mode 100644 pedidos_app/migrations/0001_initial.py
+ create mode 100644 pedidos_app/migrations/0002_pedido.py
+ create mode 100644 pedidos_app/migrations/0003_producto_categorias_item.py
+ create mode 100644 pedidos_app/migrations/__init__.py
+ create mode 100644 pedidos_app/models.py
+ create mode 100644 pedidos_app/tests.py
+ create mode 100644 pedidos_app/views.py
+ create mode 100644 requirements.txt
+ create mode 100644 tools/comparar_fuentes.py
+ create mode 100644 tools/documentar_comandos.py
+ create mode 100644 tools/ejecutar.py
+ create mode 100644 tools/inspeccionar_bd.py
+ create mode 100644 tools/mariadb_local.py
+ create mode 100644 tools/preparar_local.py
+ create mode 100644 tools/puerto.py
+ create mode 100644 tools/respaldo_bd.py
+ create mode 100644 tools/revisar_publicacion.py
+ create mode 100644 tools/verificar_http.py
+ create mode 100644 u2_proyecto1/__init__.py
+ create mode 100644 u2_proyecto1/asgi.py
+ create mode 100644 u2_proyecto1/entorno.py
+ create mode 100644 u2_proyecto1/settings.py
+ create mode 100644 u2_proyecto1/urls.py
+ create mode 100644 u2_proyecto1/wsgi.py
+```
+
+### 57. 2026-10-24T14:13:02
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `4520`.
+
+Finalidad: Comprobar o preparar exclusivamente el repositorio personal.
+
+```bat
+git -c credential.interactive=never push -u origin main
+```
+
+Codigo de salida: **128**. Resultado:
+
+```text
+fatal: Cannot prompt because user interactivity has been disabled.
+fatal: unable to get password from user
+```
+
+### 58. 2026-10-24T14:14:23
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `18564`.
+
+Finalidad: Comprobar o preparar exclusivamente el repositorio personal.
+
+```bat
+git log -1 --oneline
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+f467f5f Replicar proyecto de pedidos Unidad 2 con entorno local seguro
+```
+
+### 59. 2026-10-24T14:14:23
+
+Directorio: `E:\cmder\Unidad2`. Cmder: `E:\cmder`; ConEmuPID: `18564`.
+
+Finalidad: Preparar o verificar el componente indicado y registrar el resultado real.
+
+```bat
+python tools\verificar_http.py 8001
+```
+
+Codigo de salida: **0**. Resultado:
+
+```text
+GET /admin/: 302 Location: /admin/login/?next=/admin/
+GET / 200
+GET /admin/login/ 200
+GET /api/ 404
+GET /pedidos/ 404
+HTTP_OK: http://127.0.0.1:8001
+```
+
 ## Servidor activo (comando aun en ejecucion)
 
 La fase de arranque llamo INICIAR_BACKEND.cmd 8001. Este activo .venv,
@@ -3604,3 +3763,18 @@ Los archivos .task son solo el mecanismo de despacho; la inicializacion interna
 de Cmder/Clink no se considera un comando del proyecto escrito por Codex.
 Las lecturas externas del codigo y del estado de Windows fueron consultas de
 preparacion, no levantamientos alternativos. No se registran valores de secretos.
+
+## Publicacion pendiente de autenticacion
+
+El push real registrado devolvio codigo 128 por falta de credenciales disponibles.
+El proyecto tiene commit local, pero no se ha publicado en GitHub. La conexion
+del plugin tiene permisos de lectura. El usuario puede completar desde Cmder:
+
+```bat
+cd /d E:\cmder\Unidad2
+git push -u origin main
+```
+
+Completar el inicio de sesion oficial de GitHub cuando se solicite. No escribir
+tokens o contrasenas en el comando. La publicacion no esta confirmada hasta
+que push termine correctamente y se compruebe la referencia remota.

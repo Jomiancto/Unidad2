@@ -101,3 +101,16 @@ Los scripts de verificacion no crean datos de negocio. Los respaldos se conserva
 en `.local/respaldos`, ignorados por Git, junto a los registros de las tareas Cmder.
 `manage.py test` encuentra cero tests; no equivale a cobertura automatizada del negocio.
 Consultar `COMANDOS_CMDER.md` e `INFORME_BACKEND.md` para resultados reales.
+
+## Estado del respaldo GitHub
+
+El codigo esta confirmado localmente y origin apunta al repositorio personal.
+El primer push se detuvo por falta de autenticacion; el remoto aun no contiene la copia.
+Para terminar el respaldo, desde Cmder y tras iniciar sesion en GitHub si se solicita:
+
+```bat
+cd /d E:\cmder\Unidad2
+git push -u origin main
+```
+
+No introducir contrasenas o tokens en comandos ni subir .env o respaldos de datos.

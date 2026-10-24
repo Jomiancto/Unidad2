@@ -48,7 +48,9 @@ type CMDER_ACCESO.log
 
 Resultado: CMDER_ROOT=E:\\cmder, ConEmuPID=13616, ACCESO_CMDER_CORRECTO.
 El lanzador de tareas se uso luego con /START E:\\cmder\\Unidad2 y archivos
-FASE1_CMDER.task, FASE2_CMDER.task, FASE3_CMDER.task y FASE4_CMDER.task, en ese orden.
+FASE1_CMDER.task, FASE2_CMDER.task, FASE3_CMDER.task, FASE4_CMDER.task,
+FASE5_CMDER.task (tres intentos: revision inicial, normalizacion y push) y
+FASE6_CMDER.task, en ese orden.
 Las tareas contienen cmd.exe /d /k y el archivo .cmd correspondiente.
 Los scripts usan call E:\\cmder\\vendor\\init.bat, cd /d E:\\cmder\\Unidad2 y
 call .venv\\Scripts\\activate.bat. Los controles if errorlevel interrumpen ante fallos.
@@ -136,6 +138,21 @@ Los archivos .task son solo el mecanismo de despacho; la inicializacion interna
 de Cmder/Clink no se considera un comando del proyecto escrito por Codex.
 Las lecturas externas del codigo y del estado de Windows fueron consultas de
 preparacion, no levantamientos alternativos. No se registran valores de secretos.
+
+## Publicacion pendiente de autenticacion
+
+El push real registrado devolvio codigo 128 por falta de credenciales disponibles.
+El proyecto tiene commit local, pero no se ha publicado en GitHub. La conexion
+del plugin tiene permisos de lectura. El usuario puede completar desde Cmder:
+
+```bat
+cd /d E:\\cmder\\Unidad2
+git push -u origin main
+```
+
+Completar el inicio de sesion oficial de GitHub cuando se solicite. No escribir
+tokens o contrasenas en el comando. La publicacion no esta confirmada hasta
+que push termine correctamente y se compruebe la referencia remota.
 '''
 documento = '\n'.join(linea.rstrip() for linea in documento.splitlines()) + '\n'
 (raiz / 'COMANDOS_CMDER.md').write_text(documento, encoding='utf-8', newline='\n')

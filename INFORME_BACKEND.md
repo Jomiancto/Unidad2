@@ -102,9 +102,17 @@ el codigo indicado y Jomiancto/Unidad2 estaba vacio (API contents devolvio empty
 Se creo una carpeta independiente y un historial nuevo saneado, sin arrastrar
 commits con credenciales del profesor ni del proyecto anterior.
 Origin: https://github.com/Jomiancto/Unidad2.git. Rama: main.
-No hay remoto de escritura al profesor. El estado de commit/push se registra en
-COMANDOS_CMDER.md; no debe interpretarse este apartado como confirmacion anticipada
-de una publicacion. No se utiliza force push.
+Se creo el commit local tras revisar archivos preparados, sintaxis, exclusiones y secretos.
+El push fallo con codigo 128: Git no tiene credenciales disponibles y la ejecucion
+sin interaccion no puede solicitar inicio de sesion. La conexion GitHub del plugin
+confirma permisos de lectura y push=false. Por tanto, Unidad2 remoto sigue vacio:
+el respaldo Git local esta preparado, pero aun no existe respaldo remoto.
+No se intento publicar al profesor y no se utilizo force push.
+
+Para completar el respaldo, el usuario debe abrir Cmder, entrar a E:\cmder\Unidad2
+y ejecutar git push -u origin main, completando el inicio de sesion oficial si se solicita.
+No escribir tokens ni contrasenas en comandos o archivos. La autenticacion interactiva
+requiere participacion del usuario; no es un fallo de Django o MariaDB.
 
 ## Archivos y pendientes
 
